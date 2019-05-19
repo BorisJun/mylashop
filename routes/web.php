@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes( );
 
-
+Route::get('/', 'PagesController@root')
+    ->name('root');
 
 Route::group(['middleware'=>'auth'], function() {
     // 手动触发发送邮件
@@ -23,8 +24,10 @@ Route::group(['middleware'=>'auth'], function() {
 
     // 开始验证邮箱
     Route::group(['middleware'=>'email_verified'], function() {
-        Route::get('/', 'PagesController@root')
-            ->name('root');
+
+        // 用户收货地址
+        Route::get('user_addresses', 'UserAddressesController@index')
+            ->name('user_addresses.index');
     });
     // 结束
 });

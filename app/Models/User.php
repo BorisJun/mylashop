@@ -31,4 +31,12 @@ class User extends Authenticatable
         'email_verified' => 'boolean',
     ];
 
+    /**关联关系：一对多
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
+
 }
