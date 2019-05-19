@@ -28,6 +28,14 @@ Route::group(['middleware'=>'auth'], function() {
         // 用户收货地址
         Route::get('user_addresses', 'UserAddressesController@index')
             ->name('user_addresses.index');
+
+        // 新增收货地址
+        Route::get('user_addresses/create', 'UserAddressesController@create')
+            ->name('user_addresses.create');
+
+        // 保存收货地址
+        Route::post('user_addresses', 'UserAddressesController@store')
+            ->name('user_addresses.store');
     });
     // 结束
 });

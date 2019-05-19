@@ -7,7 +7,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     收货地址列表
-    <a href="###" class="pull-right">新增收货地址</a>
+    <a href="{{ route('user_addresses.create') }}" class="pull-right">新增收货地址</a>
   </div>
   <div class="panel-body">
     <table class="table table-bordered table-striped">
