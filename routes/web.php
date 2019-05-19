@@ -36,6 +36,18 @@ Route::group(['middleware'=>'auth'], function() {
         // 保存收货地址
         Route::post('user_addresses', 'UserAddressesController@store')
             ->name('user_addresses.store');
+
+        // 修改收货地址页面
+        Route::get('user_addresses/{user_address}', 'UserAddressesController@edit')
+            ->name('user_addresses.edit');
+
+        // put 保存修改信息
+        Route::put('user_addresses/{user_address}', 'UserAddressesController@update')
+            ->name('user_addresses.update');
+
+        // 删除收货地址
+        Route::delete('user_addresses/{user_address}', 'UserAddressesController@destroy')
+            ->name('user_addresses.destroy');
     });
     // 结束
 });
