@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes( );
 
-Route::get('/', 'PagesController@root')
-    ->name('root');
+Route::redirect('/', '/products')->name('root');
 
 Route::group(['middleware'=>'auth'], function() {
     // 手动触发发送邮件
@@ -51,5 +50,9 @@ Route::group(['middleware'=>'auth'], function() {
     });
     // 结束
 });
+
+// 商品模块
+Route::get('products', 'ProductsController@index')->name('products.index');
+Route::get('products/{product}', 'ProductsController@show')->name('products.show');
 
 

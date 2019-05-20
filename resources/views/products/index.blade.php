@@ -44,7 +44,7 @@
       </div>
       @endforeach
     </div>
-    <div class="pull-right">{{ $products->appends($filters)->render() }}</div>
+{{--    <div class="pull-right">{{ $products->appends($filters)->render() }}</div>--}}
   </div>
 </div>
 </div>
@@ -53,7 +53,7 @@
 
 @section('scriptsAfterJs')
   <script>
-    var filters = {!! json_encode($filters) !!};
+    {{--var filters = {!! json_encode($filters) !!};--}}
     $(document).ready(function () {
       $('.search-form input[name=search]').val(filters.search);
       $('.search-form select[name=order]').val(filters.order);
