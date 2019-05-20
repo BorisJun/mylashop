@@ -19,7 +19,7 @@ class Product extends Model
      * 商品与sku是一对多关联关系
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function sku()
+    public function skus()
     {
         return $this->hasMany(ProductSku::class);
     }
